@@ -1,0 +1,440 @@
+{
+	"info": {
+		"_postman_id": "e3af3a50-88bd-4cfa-ae21-455e17aef0b4",
+		"name": "Library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get a particular book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3Ntb3NAeWFob28uY29tIiwiZ3JhbnRlZEF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX251bGwifV0sImV4cCI6MTYyODkyMzk0OSwiaWF0IjoxNjI4ODg3OTQ5fQ.DxsRRxG_G9HuCD6gU1_2thDvotwGTl12gFwuqn3kmt3johw-pI1IXSQNQ3kDpyTQ9pBuXCP4QGpeUGoVg5SCrQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/library/books/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"library",
+						"books",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by title",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3Ntb3NAeWFob28uY29tIiwiZ3JhbnRlZEF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX251bGwifV0sImV4cCI6MTYyODkyMzk0OSwiaWF0IjoxNjI4ODg3OTQ5fQ.DxsRRxG_G9HuCD6gU1_2thDvotwGTl12gFwuqn3kmt3johw-pI1IXSQNQ3kDpyTQ9pBuXCP4QGpeUGoVg5SCrQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"title\": \"The Mayor\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/library/books/title",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"library",
+						"books",
+						"title"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3Ntb3NAeWFob28uY29tIiwiZ3JhbnRlZEF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX251bGwifV0sImV4cCI6MTYyODkyMzk0OSwiaWF0IjoxNjI4ODg3OTQ5fQ.DxsRRxG_G9HuCD6gU1_2thDvotwGTl12gFwuqn3kmt3johw-pI1IXSQNQ3kDpyTQ9pBuXCP4QGpeUGoVg5SCrQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"The Mayor\",\n        \"isbn\": \"22434143443\",\n        \"publicationYear\": 2002,\n        \"availableCopies\": 7,\n        \"authors\": [\n            {\"name\": \"Thomas Hardy\"}\n        ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/library/books",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"library",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a member",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Abula\",\n    \"lastName\": \"Egba\",\n    \"email\": \"abula@yahoo.com\",\n    \"password\": \"egba\",\n    \"role\": \"USER\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/library/members",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"library",
+						"members"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all members",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3Ntb3NAeWFob28uY29tIiwiZ3JhbnRlZEF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX251bGwifV0sImV4cCI6MTYyODkyMjIzMCwiaWF0IjoxNjI4ODg2MjMwfQ.ZjUMMGAbqvJ4Uxmy_UgHeo7TboFuvh6WPck20PJeh7v_9pNER4xrZbt_G4-aAVHqNWqSMq0fn4galBneSer6mA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/library/members",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"library",
+						"members"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all books",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3Ntb3NAeWFob28uY29tIiwiZ3JhbnRlZEF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX251bGwifV0sImV4cCI6MTYyODkyMzk0OSwiaWF0IjoxNjI4ODg3OTQ5fQ.DxsRRxG_G9HuCD6gU1_2thDvotwGTl12gFwuqn3kmt3johw-pI1IXSQNQ3kDpyTQ9pBuXCP4QGpeUGoVg5SCrQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/library/books",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"library",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3Ntb3NAeWFob28uY29tIiwiZ3JhbnRlZEF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX251bGwifV0sImV4cCI6MTYyODkxMTUyOSwiaWF0IjoxNjI4ODc1NTI5fQ.M0zu86xTs6FWtfQCBP2MNq9Z7d0lzS_i2sUEKiQGEaHlPvDEfQ7Jx5DTyqYliE53kL7r3ZRvJIAjmXr-Nnh8HA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"cosmos@yahoo.com\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/library/members/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"library",
+						"members",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lendbook",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3Ntb3NAeWFob28uY29tIiwiZ3JhbnRlZEF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX251bGwifV0sImV4cCI6MTYyODkyMzk0OSwiaWF0IjoxNjI4ODg3OTQ5fQ.DxsRRxG_G9HuCD6gU1_2thDvotwGTl12gFwuqn3kmt3johw-pI1IXSQNQ3kDpyTQ9pBuXCP4QGpeUGoVg5SCrQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Owie\",\n    \"lastName\": \"Osagie\",\n    \"email\": \"osas@gmail.com\",\n    \"password\": \"owsag\",\n    \"role\": \"USER\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/library/books/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"library",
+						"books",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by author",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYnVsYUB5YWhvby5jb20iLCJncmFudGVkQXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfbnVsbCJ9XSwiZXhwIjoxNjI4OTIzMzY0LCJpYXQiOjE2Mjg4ODczNjR9.frEyX99srj1eZ6f7c1YOC8Nxz0QBhDPrhhbtWIu1xdEEpXoMbwDvs--zxe1T839doFAOxUB7ZitTAc59FFJPXw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Wole Soyinka\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/library/books/author",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"library",
+						"books",
+						"author"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a new library user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Owie\",\n    \"lastName\": \"Osagie\",\n    \"email\": \"osas@gmail.com\",\n    \"password\": \"owsag\",\n    \"role\": \"USER\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/library/members",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"library",
+						"members"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove a library user from database",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3Ntb3NAeWFob28uY29tIiwiZ3JhbnRlZEF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX251bGwifV0sImV4cCI6MTYyODkyMzk0OSwiaWF0IjoxNjI4ODg3OTQ5fQ.DxsRRxG_G9HuCD6gU1_2thDvotwGTl12gFwuqn3kmt3johw-pI1IXSQNQ3kDpyTQ9pBuXCP4QGpeUGoVg5SCrQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/library/members/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"library",
+						"members",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user's details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3Ntb3NAeWFob28uY29tIiwiZ3JhbnRlZEF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX251bGwifV0sImV4cCI6MTYyODkyMzk0OSwiaWF0IjoxNjI4ODg3OTQ5fQ.DxsRRxG_G9HuCD6gU1_2thDvotwGTl12gFwuqn3kmt3johw-pI1IXSQNQ3kDpyTQ9pBuXCP4QGpeUGoVg5SCrQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Jegede\",\n    \"lastName\": \"Olanrewaju\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/library/members/33",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"library",
+						"members",
+						"33"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
